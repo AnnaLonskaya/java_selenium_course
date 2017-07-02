@@ -1,4 +1,4 @@
-package ua.annalonskaya.mantis.tests;
+package ua.annalonskaya;
 
 import org.junit.After;
 import org.junit.Before;
