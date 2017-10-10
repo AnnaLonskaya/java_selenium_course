@@ -8,12 +8,12 @@ public class Task7LeftMenuNavigationTest extends BaseTest{
     public void leftMenuNavigationTest() {
         app.loginAsAdmin();
 
-        for (String menuName: app.getMenuNamesList()){
-            app.clickOnMenuItem(menuName);
-            app.titleIsDisplayedVerify();
+        for (String menuName: app.getMainPageAdmin().getMenuNamesList()){
+            app.getMainPageAdmin().clickOnMenuItem(menuName);
+            app.getMainPageAdmin().titleIsDisplayedVerify();
 
-            if (app.isMenuHasSubMenuItems()){
-                app.subMenuItemsTitlesVerify(menuName);
+            if (app.getMainPageAdmin().isMenuHasSubMenuItems()){
+                app.getMainPageAdmin().subMenuItemsTitlesVerify(menuName);
             }
         }
     }
