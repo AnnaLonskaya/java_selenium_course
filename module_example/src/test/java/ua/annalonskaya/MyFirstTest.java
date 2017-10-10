@@ -29,7 +29,7 @@ public class MyFirstTest {
         WebElement element = driver.findElement(By.name("btnK"));
         JavascriptExecutor executor = (JavascriptExecutor)driver;
         executor.executeScript("arguments[0].click()", element);
-//        driver.findElement(By.name("btnK")).click();
+//        wd.findElement(By.name("btnK")).click();
         wait.until(ExpectedConditions.titleIs("webdriver - Пошук Google"));
     }
 

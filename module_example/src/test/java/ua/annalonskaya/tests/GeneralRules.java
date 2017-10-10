@@ -50,7 +50,7 @@ public class GeneralRules {
         WebElement element = driver.findElement(By.name("btnK"));
         JavascriptExecutor executor = (JavascriptExecutor)driver;
         executor.executeScript("arguments[0].click()", element);
-//        driver.findElement(By.name("btnK")).click();
+//        wd.findElement(By.name("btnK")).click();
         assertThat(isElementPresent("//a[contains(@href,'admin')]")).isTrue();
     }
 
