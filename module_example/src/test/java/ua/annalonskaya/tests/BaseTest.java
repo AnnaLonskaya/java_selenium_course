@@ -56,4 +56,14 @@ public class BaseTest {
                 ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
     }
 
+    public void loginAsAdmin() {
+        driver.findElement(By.name("username")).sendKeys("admin");
+        driver.findElement(By.name("password")).sendKeys("admin");
+        driver.findElement(By.xpath("//button[@name='login']")).click();
+    }
+
+    public boolean isElementDisplayed(By by){
+        return driver.findElements(by).size() > 0;
+    }
+
 }

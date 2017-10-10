@@ -10,9 +10,7 @@ public class LoginTest extends BaseTest {
     @Test
     public void firstTest() {
         goToPage("http://localhost:8080/litecart/admin/");
-        driver.findElement(By.name("username")).sendKeys("admin");
-        driver.findElement(By.name("password")).sendKeys("admin");
-        driver.findElement(By.xpath("//button[@name='login']")).click();
+        loginAsAdmin();
         waitForElementPresent("//a[contains(@href,'admin')]");
         assertThat(isElementPresent("//a[contains(@href,'admin')]")).isTrue();
     }
