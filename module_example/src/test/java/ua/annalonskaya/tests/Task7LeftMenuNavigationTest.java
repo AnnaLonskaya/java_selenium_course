@@ -6,7 +6,7 @@ public class Task7LeftMenuNavigationTest extends BaseTest{
 
     @Test
     public void leftMenuNavigationTest() {
-        app.loginAsAdmin();
+        app.getLoginHelper().loginAsAdmin();
 
         for (String menuName: app.getMainPageAdmin().getMenuNamesList()){
             app.getMainPageAdmin().clickOnMenuItem(menuName);

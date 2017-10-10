@@ -18,6 +18,7 @@ public class ApplicationManager {
     public static WebDriver wd;
 
     private MainPageAdmin mainPageAdmin;
+    private LoginHelper loginHelper;
 
     public void init() {
         wd = new ChromeDriver();
@@ -35,6 +36,7 @@ public class ApplicationManager {
         wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         wd.get("http://localhost:8080/litecart/admin");
         mainPageAdmin = new MainPageAdmin(wd);
+        loginHelper = new LoginHelper(wd);
     }
 
     public void stop() {
@@ -56,15 +58,12 @@ public class ApplicationManager {
         wd.get(pageUrl);
     }
 
-    public void loginAsAdmin() {
-        wd.findElement(By.name("username")).sendKeys("admin");
-        wd.findElement(By.name("password")).sendKeys("admin");
-        wd.findElement(By.xpath("//button[@name='login']")).click();
-    }
-
     public MainPageAdmin getMainPageAdmin() {
         return mainPageAdmin;
     }
 
+    public LoginHelper getLoginHelper() {
+        return loginHelper;
+    }
 
 }

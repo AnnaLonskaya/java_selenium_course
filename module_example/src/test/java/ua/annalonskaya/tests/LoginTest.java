@@ -10,7 +10,7 @@ public class LoginTest extends BaseTest {
     @Test
     public void firstTest() {
         app.goToPage("http://localhost:8080/litecart/admin/");
-        app.loginAsAdmin();
+        app.getLoginHelper().loginAsAdmin();
         ApplicationManager.waitForElementPresent("//a[contains(@href,'admin')]");
         assertThat(ApplicationManager.isElementPresent("//a[contains(@href,'admin')]")).isTrue();
     }
