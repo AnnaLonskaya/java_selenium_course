@@ -44,8 +44,12 @@ public class ApplicationManager {
         wd = null;
     }
 
+    public static boolean isElementDisplayed(By by){
+        return wd.findElements(by).size() > 0;
+    }
+
     public static boolean isElementPresent(String xpath) {
-        return MainPageAdmin.isElementDisplayed(By.xpath(xpath));
+        return isElementDisplayed(By.xpath(xpath));
     }
 
     public static void waitForElementPresent(String xpath) {

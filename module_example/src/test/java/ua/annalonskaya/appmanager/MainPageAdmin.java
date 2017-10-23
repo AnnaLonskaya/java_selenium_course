@@ -23,10 +23,6 @@ public class MainPageAdmin {
         this.wd = wd;
     }
 
-    public static boolean isElementDisplayed(By by){
-        return ApplicationManager.wd.findElements(by).size() > 0;
-    }
-
     private List<String> getSubMenuNamesList() {
         List<String> subMenuNamesList = new ArrayList<String>();
         for (WebElement subMenuName: ApplicationManager.wd.findElements(By.cssSelector(SUB_MENU_ITEMS_LIST))){
@@ -57,7 +53,7 @@ public class MainPageAdmin {
         List<String> subMenuNamesList = getSubMenuNamesList();
 
         for (String submenuName: subMenuNamesList){
-            if (isElementDisplayed(By.xpath(String.format(MENU_ITEM, submenuName)))){
+            if (ApplicationManager.isElementDisplayed(By.xpath(String.format(MENU_ITEM, submenuName)))){
                 clickOnMenuItem(submenuName);
             } else {
                 clickOnMenuItem(menuName);
