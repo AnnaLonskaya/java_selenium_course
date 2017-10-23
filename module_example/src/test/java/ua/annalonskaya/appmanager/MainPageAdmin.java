@@ -46,11 +46,11 @@ public class MainPageAdmin {
 
 
     public void clickOnMenuItem(String menuName) {
-        ApplicationManager.wd.findElement(By.xpath(String.format(MENU_ITEM, menuName))).click();
+        wd.findElement(By.xpath(String.format(MENU_ITEM, menuName))).click();
     }
 
     public boolean isMenuHasSubMenuItems() {
-        return ApplicationManager.wd.findElements(By.cssSelector(SUB_MENU_ITEMS_LIST)).size() > 0;
+        return wd.findElements(By.cssSelector(SUB_MENU_ITEMS_LIST)).size() > 0;
     }
 
     public void subMenuItemsTitlesVerify(String menuName) {
