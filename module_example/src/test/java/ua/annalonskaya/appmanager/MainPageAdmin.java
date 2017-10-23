@@ -68,6 +68,6 @@ public class MainPageAdmin {
     }
 
     public void titleIsDisplayedVerify() {
-        assertTrue(ApplicationManager.wd.findElement(By.cssSelector(PAGE_TITLE)).isDisplayed());
+        assertTrue(wd.findElement(By.cssSelector(PAGE_TITLE)).isDisplayed());
     }
 }
